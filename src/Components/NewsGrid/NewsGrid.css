@@ -1,0 +1,10 @@
+.news-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  padding: 40px calc(20% + 40px);
+  grid-gap: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  background-color: #ecebeb;
+}
