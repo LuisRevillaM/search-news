@@ -25,7 +25,7 @@ This component holds the list of news fetched from the API. It also holds the lo
 
 ### Render children
 
-NewsContainer doesn't have any opinions on how the information/methods it holds should be used and rendered. Its render method just executes a function called this.props.children. This allows the pattern shown above, in which `<NewsContainer>` wraps a function as its only child. Then from within `NewsContainer`, this presentational function is executed, passing it the necessary state and methods as arguments.
+NewsContainer doesn't have any opinions on how the information/methods it holds should be used and rendered. Its render method returns a call to the function this.props.children. This allows the pattern shown above, in which `<NewsContainer>` wraps a function as its only child. Then from within `NewsContainer`, this presentational function is executed, passing it the necessary state and methods as arguments.
 
 ```javascript
 return (
