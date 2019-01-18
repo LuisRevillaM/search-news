@@ -9,7 +9,10 @@ const NewsCard = props => {
       <img alt="article" src={imageUrl} />
       <div className="news-card__summary">
         <div className="news-card__title">{props.title}</div>
-        <div className="news-card__description">{props.description}</div>
+        <div className="news-card__description">
+          {props.description.slice(0, 100)}
+          ...
+        </div>
         <a target="_blank" className="news-card__more-btn" href={props.url}>
           Read More
         </a>
