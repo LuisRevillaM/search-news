@@ -28,7 +28,7 @@ React.Component's state and setState are leveraged to handle the state of the ap
 
 ```javascript
 (<NewsContainer>
-  {(news, gethNews, status)=>{
+  {(news, getNews, status)=>{
     return (
       <SearchBar onSearch={getNews} />
       <NewsGrid news={news} status={status} />)
