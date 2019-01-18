@@ -44,21 +44,26 @@ class NewsContainer extends Component {
   controller;
   signal;
   fetchNews;
-  searchNews = function() {
-    let dispatch = this.dispatch(this.stateReducer, this.state);
-    let signal = this.signal;
+  buildUrl = (searchTerm, sortCriteria) => {
+    const myParams = {
+      language: this.props.language || "en",
+      q: searchTerm,
+      sortBy: sortCriteria || "",
+      apiKey: "7fa0c8e603034cadbb9f36b4f8c21c87"
+    };
 
-    return async function(searchTerm, sort) {
+    const url = new URL("https://newsapi.org/v2/everything");
+    url.search = new URLSearchParams(myParams);
+    return url;
+  };
+  searchNews = function() {
+    const dispatch = this.dispatch(this.stateReducer, this.state);
+    const signal = this.signal;
+    const buildUrl = this.buildUrl;
+
+    return async function(searchTerm, sortCriteria) {
       if (searchTerm.length > 0) {
-        console.log(sort);
-        const myParams = {
-          language: "en",
-          q: searchTerm,
-          sortBy: sort ? sort : "",
-          apiKey: "7fa0c8e603034cadbb9f36b4f8c21c87"
-        };
-        const url = new URL("https://newsapi.org/v2/everything");
-        url.search = new URLSearchParams(myParams);
+        const url = buildUrl(searchTerm, sortCriteria);
         dispatch({ type: "FETCH_NEWS" });
         let data = await fetch(url, { signal });
         let jsonData = await data.json();
@@ -66,8 +71,17 @@ class NewsContainer extends Component {
       }
     };
   };
+
   render() {
-    return <div>{this.props.children(this.state.news, this.fetchNews)}</div>;
+    return (
+      <div>
+        {this.props.children(
+          this.state.news,
+          this.fetchNews,
+          this.state.status
+        )}
+      </div>
+    );
   }
 }
 

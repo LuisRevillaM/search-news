@@ -7,18 +7,22 @@ class SearchBar extends Component {
     inputValue: "",
     sortBy: "none"
   };
-
   textInputHandler = ev => {
     let inputValue = ev.target.value;
     this.setState({ inputValue });
   };
+  handleEnter = ev => {
+    if (ev.key === "Enter") {
+      this.props.onSearch(this.state.inputValue, this.state.sortBy);
+    }
+  };
   buttonClickHandler = () => {
-    this.props.onNewTerm(this.state.inputValue, this.state.sortBy);
+    this.props.onSearch(this.state.inputValue, this.state.sortBy);
   };
   sortArticles = by => {
     return () => {
       this.setState({ sortBy: by }, () => {
-        this.props.onNewTerm(this.state.inputValue, this.state.sortBy);
+        this.props.onSearch(this.state.inputValue, this.state.sortBy);
       });
     };
   };
@@ -31,13 +35,9 @@ class SearchBar extends Component {
           placeholder="Search news"
           value={inputValue}
           onChange={this.textInputHandler}
+          onKeyPress={this.handleEnter}
         />
-        <Dropdown
-          sortArticles={this.sortArticles}
-          sortBy={this.state.sortBy}
-          criterias={["publishedAt", "relevancy", "popularity", "none"]}
-        />
-
+        <Dropdown sortArticles={this.sortArticles} sortBy={this.state.sortBy} />
         <button className="search-bar__btn" onClick={this.buttonClickHandler}>
           Search
         </button>

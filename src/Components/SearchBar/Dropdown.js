@@ -1,11 +1,13 @@
 import React, { Component } from "react";
+import down from "../../assets/down.png";
 
 class Dropdown extends Component {
   state = {
     isOpen: false
   };
+  criterias = ["publishedAt", "relevancy", "popularity", "none"];
 
-  sortingCriteria = {
+  sortCriteria = {
     publishedAt: "Date",
     popularity: "Popularity",
     relevancy: "Relevance",
@@ -20,14 +22,14 @@ class Dropdown extends Component {
     });
   };
 
-  renderOptions = this.props.criterias.map(criteria => {
+  renderOptions = this.criterias.map(criteria => {
     return (
       <div
         className="search-bar__sort-btn"
         key={criteria}
         onClick={this.props.sortArticles(criteria)}
       >
-        {criteria === "none" ? "None" : this.sortingCriteria[criteria]}
+        {criteria === "none" ? "None" : this.sortCriteria[criteria]}
       </div>
     );
   });
@@ -35,7 +37,10 @@ class Dropdown extends Component {
   render() {
     return (
       <div className="search-bar__sort" onClick={this.toggleDropdown}>
-        <div>{this.sortingCriteria[this.props.sortBy]}</div>
+        <div>
+          {this.sortCriteria[this.props.sortBy]}
+          <img src={down} alt="down arrow" className="sort-arrow" />
+        </div>
         <div
           className="search-bar__sort-dropdown"
           style={{ display: this.state.isOpen ? "block" : "none" }}

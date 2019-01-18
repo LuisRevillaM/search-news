@@ -39,6 +39,11 @@
   position: relative;
   cursor: pointer;
 }
+.search-bar__sort div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .search-bar__sort-dropdown {
   position: absolute;
   width: 100%;
@@ -65,4 +70,8 @@
 .search-bar__sort:hover {
   color: #ab152a;
   background-color: #262626;
+}
+
+.sort-arrow {
+  margin-left: 5px;
 }

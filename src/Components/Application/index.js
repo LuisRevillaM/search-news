@@ -4,19 +4,16 @@ import NewsGrid from "../NewsGrid/";
 import SearchBar from "../SearchBar/";
 import "./App.css";
 
-const App = () => {
-  return (
-    <NewsContainer className="App">
-      {(news, getNews) => {
-        return (
-          <div>
-            <SearchBar onNewTerm={getNews} />
-            <NewsGrid news={news} />
-          </div>
-        );
-      }}
-    </NewsContainer>
-  );
+const Application = () => {
+  const renderApp = (news, getNews, status) => {
+    return (
+      <div>
+        <SearchBar onSearch={getNews} />
+        <NewsGrid news={news} status={status} />
+      </div>
+    );
+  };
+  return <NewsContainer className="App">{renderApp}</NewsContainer>;
 };
 
-export default App;
+export default Application;
