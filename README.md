@@ -6,7 +6,7 @@ This repository implements a website that fetches news from the [News API](https
 
 Node is required to run this project in your system.
 
-## Run Locally
+## Run locally
 
 Clone the repository. From its root directory, run
 

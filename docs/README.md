@@ -4,7 +4,7 @@ Since our component tree is not too many levels deep, it's been decided to manag
 
 ## Hierarchy
 
-The top-most component is called Application. This is a stateless component that renders `<NewsContainer/>`, which is the component that holds state and logic to be considered "global". Other components, like `<SearchBar/>` and `<NewsGrid/>` receive the necessary data and logic through the render children pattern.
+The top-most component is called Application. This is a stateless component that renders `<NewsContainer/>`, which holds the state and logic to be considered "global". Other components, like `<SearchBar/>` and `<NewsGrid/>` receive the necessary data and logic through the render children pattern.
 
 ```javascript
   const Application = ()=>{
@@ -25,7 +25,7 @@ This component holds the list of news fetched from the API. It also holds the lo
 
 ### Render children
 
-NewsContainer doesn't have any opinions on how the information/methods it holds should be used and rendered. Its render method just executes a function called this.props.children(). This allows the pattern shown above, in which `<NewsContainer>` wraps a function as its only child. Then from within `NewsContainer`, this presentational function is executed, passing it the necessary state and methods.
+NewsContainer doesn't have any opinions on how the information/methods it holds should be used and rendered. Its render method just executes a function called this.props.children. This allows the pattern shown above, in which `<NewsContainer>` wraps a function as its only child. Then from within `NewsContainer`, this presentational function is executed, passing it the necessary state and methods as arguments.
 
 ```javascript
 return (
