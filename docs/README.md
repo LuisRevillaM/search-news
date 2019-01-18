@@ -10,7 +10,7 @@ The top-most component is named Application. This is a stateless component that 
   const Application = ()=>{
     return (
       <NewsContainer>
-        {(news, gethNews, status)=>{
+        {(news, getNews, status)=>{
           return (
             <SearchBar onSearch={getNews} />
             <NewsGrid news={news} status={status} />)
