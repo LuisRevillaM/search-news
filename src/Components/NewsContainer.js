@@ -3,8 +3,7 @@ import React, { Component } from "react";
 class NewsContainer extends Component {
   state = {
     news: [],
-    status: "",
-    sortBy: "date"
+    status: ""
   };
   componentDidMount() {
     this.controller = new AbortController();
