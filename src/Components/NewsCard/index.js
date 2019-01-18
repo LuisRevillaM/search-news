@@ -10,8 +10,7 @@ const NewsCard = props => {
       <div className="news-card__summary">
         <div className="news-card__title">{props.title}</div>
         <div className="news-card__description">
-          {props.description.slice(0, 100)}
-          ...
+          {props.description ? `${props.description.slice(0, 100)}...` : null}
         </div>
         <a target="_blank" className="news-card__more-btn" href={props.url}>
           Read More
