@@ -1,6 +1,6 @@
 # Documentation
 
-Since our component tree is not too many levels deep, it's been decided to manage the state of the application using React.Comoponent's state and setState - instead of other patterns involving a global store, ala Redux. This state and logic are shared using typical React patterns to compose components.
+Since our component tree is not too many levels deep, it's been decided to manage the state of the application using React.Component's state and setState - instead of other patterns involving a global store, ala Redux. This state and logic are shared using typical React patterns to compose components.
 
 ## Hierarchy
 
