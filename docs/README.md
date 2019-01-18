@@ -48,7 +48,7 @@ By default, `NewsContainer` will request news from the NewsAPI in language 'en'.
 This component consists of two input elements: one for the search term and another for the sort criteria of the results. It takes as props a method called `onSearch`, to be executed when the user clicks the "Search" button.
 
 ```javascript
-return <SearchBar onSearch={getNews} />;
+  <SearchBar onSearch={getNews} />;
 ```
 
 ## NewsGrid
@@ -56,7 +56,7 @@ return <SearchBar onSearch={getNews} />;
 `NewsGrid` is a stateless component that takes two pieces of information as props: a list of news to display and a status string to know whether the request is in process, succeeded or failed.
 
 ```javascript
-return <NewsGrid news={news} status={status} />;
+  <NewsGrid news={news} status={status} />;
 ```
 
 ## NewsCard
