@@ -30,7 +30,7 @@ NewsContainer doesn't have any opinions on how the information/methods it holds 
 ```javascript
 return (
   <div>
-    {this.props.children(this.state.news, this.fetchNews, this.state.status)}
+    {this.props.children(this.state.news, this.getNews, this.state.status)}
   </div>
 );
 ```
