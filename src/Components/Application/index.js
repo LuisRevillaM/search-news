@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import NewsContainer from "../NewsContainer";
 import NewsGrid from "../NewsGrid/";
 import SearchBar from "../SearchBar/";
-
 import "./App.css";
 
-//
 const App = () => {
   return (
     <NewsContainer className="App">
@@ -13,7 +11,6 @@ const App = () => {
         return (
           <div>
             <SearchBar onNewTerm={getNews} />
-
             <NewsGrid news={news} />
           </div>
         );

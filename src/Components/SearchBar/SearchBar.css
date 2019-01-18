@@ -3,6 +3,7 @@
   background-color: #353535;
   display: flex;
   justify-content: space-between;
+  z-index: 10000;
 }
 
 .search-bar__input {
@@ -23,6 +24,7 @@
   background-color: #ab152a;
   border: 0;
   border-radius: 3px;
+  cursor: pointer;
 }
 
 .search-bar__sort {

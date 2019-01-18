@@ -1,11 +1,11 @@
 .news-card {
   background-color: #ffffff;
+  animation: 0.5s ease-out 0s 1 slideInFromBelow;
 }
 
 .news-card img {
   width: 100%;
   height: 270px;
-
   object-fit: cover;
 }
 
@@ -31,4 +31,19 @@
 
 .news-card__description {
   padding: 20px 0;
+}
+
+@keyframes slideInFromBelow {
+  0% {
+    transform: translateY(1.5%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+header {
+  /* This section calls the slideInFromLeft animation we defined above */
+  background: #333;
+  padding: 30px;
 }
