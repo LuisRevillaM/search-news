@@ -4,7 +4,7 @@ Since our component tree is not too many levels deep, it's been decided to manag
 
 ## Hierarchy
 
-The top-most component is called Application. This is a stateless component that renders `<NewsContainer/>`, which holds the state and logic to be considered "global". Other components, like `<SearchBar/>` and `<NewsGrid/>` receive the necessary data and logic through the render children pattern.
+The top-most component is named Application. This is a stateless component that renders `<NewsContainer/>`, which holds the state and logic to be considered "global". Other components, like `<SearchBar/>` and `<NewsGrid/>` receive the necessary data and logic through the render children pattern.
 
 ```javascript
   const Application = ()=>{
