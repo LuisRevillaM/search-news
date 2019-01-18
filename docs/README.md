@@ -45,7 +45,7 @@ By default, `NewsContainer` will request news from the NewsAPI in language 'en'.
 
 ## SearchBar
 
-This component consists of two input elements: one for the search term and another for the sort criteria of the results. It takes as props a method called `onSearch`.
+This component consists of two input elements: one for the search term and another for the sort criteria of the results. It takes as props a method called `onSearch`, to be executed when the user clicks the "Search" button.
 
 ```javascript
 return <SearchBar onSearch={getNews} />;
