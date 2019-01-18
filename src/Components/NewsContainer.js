@@ -9,7 +9,7 @@ class NewsContainer extends Component {
   componentDidMount() {
     this.controller = new AbortController();
     this.signal = this.controller.signal;
-    this.fetchNews = this.searchNews();
+    this.fetchNews = this.initFetchNews();
     this.setState({ status: "ready" });
   }
   componentWillUnmount() {
@@ -41,26 +41,24 @@ class NewsContainer extends Component {
     };
   };
 
-  controller;
-  signal;
-  fetchNews;
   buildHeader = () => {
     const apiKeyHeader = { "X-Api-Key": "7fa0c8e603034cadbb9f36b4f8c21c87" };
     const headers = new Headers(apiKeyHeader);
     return headers;
   };
+
   buildUrl = (searchTerm, sortCriteria) => {
     const myParams = {
       language: this.props.language || "en",
       q: searchTerm,
       sortBy: sortCriteria || ""
     };
-
     const url = new URL("https://newsapi.org/v2/everything");
     url.search = new URLSearchParams(myParams);
     return url;
   };
-  searchNews = function() {
+
+  initFetchNews = function() {
     const dispatch = this.dispatch(this.stateReducer, this.state);
     const signal = this.signal;
     const buildUrl = this.buildUrl;
@@ -76,6 +74,10 @@ class NewsContainer extends Component {
       }
     };
   };
+
+  controller;
+  signal;
+  fetchNews;
 
   render() {
     return (
