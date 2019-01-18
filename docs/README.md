@@ -58,3 +58,7 @@ return <SearchBar onSearch={getNews} />;
 ```javascript
 return <NewsGrid news={news} status={status} />;
 ```
+
+## NewsCard
+
+`NewsCard` is a stateless component to render the information of an individual news object. It takes as props a url to an image, the title, description and url to the article.
