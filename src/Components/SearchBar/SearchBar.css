@@ -34,4 +34,33 @@
   box-sizing: border-box;
   margin: 0 15px;
   border-radius: 3px;
+  position: relative;
+  cursor: pointer;
+}
+.search-bar__sort-dropdown {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  left: 0;
+  top: 49px;
+}
+.search-bar__sort-btn {
+  background-color: #272727;
+  color: #e5e5e5;
+  width: 145px;
+  padding: 15px;
+  text-align: center;
+  box-sizing: border-box;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.search-bar__sort-btn:hover {
+  color: #ab152a;
+  background-color: #4c4c4c;
+}
+
+.search-bar__sort:hover {
+  color: #ab152a;
+  background-color: #262626;
 }
