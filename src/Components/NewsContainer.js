@@ -8,7 +8,7 @@ class NewsContainer extends Component {
   componentDidMount() {
     this.controller = new AbortController();
     this.signal = this.controller.signal;
-    this.fetchNews = this.initFetchNews();
+    this.getNews = this.initGetNews();
     this.setState({ status: "ready" });
   }
   componentWillUnmount() {
@@ -57,7 +57,7 @@ class NewsContainer extends Component {
     return url;
   };
 
-  initFetchNews = function() {
+  initGetNews = function() {
     const dispatch = this.dispatch(this.stateReducer, this.state);
     const signal = this.signal;
     const buildUrl = this.buildUrl;
@@ -76,14 +76,14 @@ class NewsContainer extends Component {
 
   controller;
   signal;
-  fetchNews;
+  getNews;
 
   render() {
     return (
-      <div>
+      <div>g
         {this.props.children(
           this.state.news,
-          this.fetchNews,
+          this.getNews,
           this.state.status
         )}
       </div>
