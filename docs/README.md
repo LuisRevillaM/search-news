@@ -25,7 +25,7 @@ The top-most component is named Application. This is a stateless component that 
 
 ## News Container
 
-This component holds the list of news fetched from the API. It also holds the logic to make async requests to the API and update the Component's state. To share this state and logic, we use the render props.children pattern
+This component holds the list of news fetched from the API. It also holds the logic to make async requests to the API and update the component's state. To share this state and logic, we use the render props.children pattern
 
 ### Render children
 
