@@ -12,11 +12,15 @@ The top-most component is named Application. This is a stateless component that 
       <NewsContainer>
         {(news, getNews, status)=>{
           return (
-            <SearchBar onSearch={getNews} />
-            <NewsGrid news={news} status={status} />)
-         }}
-      </NewsContainer>)
-     }
+            <div>
+              <SearchBar onSearch={getNews} />
+              <NewsGrid news={news} status={status} />
+            </div>
+          );
+        }}
+      </NewsContainer>
+    )
+  }
 ```
 
 ## News Container
