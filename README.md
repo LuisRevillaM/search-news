@@ -27,11 +27,14 @@ This website consist of a root, HTML document and JavaScript (React) code to gen
 React.Component's state and setState are leveraged to handle the state of the application. A parent component holds the global state as well as the logic to update it. Such state and logic are shared with a presentational component through the render children pattern. See the [docs](https://github.com/luisrevillam/search-news/tree/component-state/docs) section for implementation details.
 
 ```javascript
-(<NewsContainer>
+<NewsContainer>
   {(news, getNews, status)=>{
     return (
-      <SearchBar onSearch={getNews} />
-      <NewsGrid news={news} status={status} />)
+      <div>
+        <SearchBar onSearch={getNews} />
+        <NewsGrid news={news} status={status} />
+      </div>
+    );
   }}
-</NewsContainer>)
+</NewsContainer>
 ```
