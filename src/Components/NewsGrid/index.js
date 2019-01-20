@@ -1,15 +1,17 @@
 import React from "react";
 import "./NewsGrid.css";
 import NewsCard from "../NewsCard/";
-
+const Loading = () => {
+  return (
+    <div className="loading-container">
+      <div className="loading" />
+    </div>
+  );
+};
+const ErrorMsg = () => {
+  return <div>There has been an error fetching the resources</div>;
+};
 const NewsGrid = props => {
-  const Loading = () => {
-    return (
-      <div className="loading-container">
-        <div className="loading" />
-      </div>
-    );
-  };
   const renderGrid = () => {
     if (props.status === "fetching") {
       return <Loading />;
@@ -17,6 +19,8 @@ const NewsGrid = props => {
       return props.news.map(n => {
         return <NewsCard key={n.url} {...n} />;
       });
+    } else if (props.status === "error") {
+      return <ErrorMsg />;
     } else {
       return null;
     }

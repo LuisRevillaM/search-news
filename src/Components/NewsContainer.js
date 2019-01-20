@@ -65,11 +65,15 @@ class NewsContainer extends Component {
 
     return async function(searchTerm, sortCriteria) {
       if (searchTerm.length > 0) {
-        const url = buildUrl(searchTerm, sortCriteria);
-        dispatch({ type: "FETCH_NEWS" });
-        let data = await fetch(url, { signal, headers });
-        let jsonData = await data.json();
-        dispatch({ type: "NEWS_ARRIVED", payload: jsonData.articles });
+        try {
+          const url = buildUrl(searchTerm, sortCriteria);
+          dispatch({ type: "FETCH_NEWS" });
+          let data = await fetch(url, { signal, headers });
+          let jsonData = await data.json();
+          dispatch({ type: "NEWS_ARRIVED", payload: jsonData.articles });
+        } catch (error) {
+          dispatch({ type: "FETCHING_ERROR", payload: error });
+        }
       }
     };
   };
@@ -80,12 +84,8 @@ class NewsContainer extends Component {
 
   render() {
     return (
-      <div>g
-        {this.props.children(
-          this.state.news,
-          this.getNews,
-          this.state.status
-        )}
+      <div>
+        g{this.props.children(this.state.news, this.getNews, this.state.status)}
       </div>
     );
   }
