@@ -22,7 +22,7 @@ npm start
 
 ## Documentation
 
-This website consist of a root, HTML document and JavaScript (React) code to generate the view layer. It's been bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This website consists of a root, HTML document and JavaScript (React) code to generate the view layer. It's been bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 React.Component's state and setState are leveraged to handle the state of the application. A parent component holds the global state as well as the logic to update it. Such state and logic are shared with a presentational component through the render children pattern. See the [docs](https://github.com/luisrevillam/search-news/tree/component-state/docs) section for implementation details.
 
