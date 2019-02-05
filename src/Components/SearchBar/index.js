@@ -32,7 +32,7 @@ class SearchBar extends Component {
       <div className="search-bar">
         <input
           className="search-bar__input"
-          placeholder="Search news"
+          placeholder="Search"
           value={inputValue}
           onChange={this.textInputHandler}
           onKeyPress={this.handleEnter}
