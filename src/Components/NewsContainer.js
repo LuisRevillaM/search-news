@@ -85,7 +85,7 @@ class NewsContainer extends Component {
   render() {
     return (
       <div>
-        g{this.props.children(this.state.news, this.getNews, this.state.status)}
+        {this.props.children(this.state.news, this.getNews, this.state.status)}
       </div>
     );
   }
